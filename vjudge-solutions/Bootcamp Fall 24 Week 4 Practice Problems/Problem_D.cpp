@@ -1,31 +1,37 @@
 #include <iostream>
-#include <algorithm>
+#include <vector>
 
 using namespace std;
-
 #define FAST_IO                \
   ios::sync_with_stdio(false); \
   cin.tie(nullptr);
-
 using ll = long long;
+using vi = vector<int>;
+using vll = vector<ll>;
 const ll mod = 1e9 + 7;
 
 void solve()
 {
   int n;
   cin >> n;
-  int *arr = new int[n];
+  vector<vector<int>> matrix(n, vector<int>(n));
   for (int i = 0; i < n; ++i)
   {
-    cin >> arr[i];
+    for (int j = 0; j < n; ++j)
+    {
+      cin >> matrix[i][j];
+    }
   }
-  reverse(arr, arr + n);
+
   for (int i = 0; i < n; ++i)
-  { 
-    cout << arr[i] << " ";
+  {
+    for (int j = 0; j < n; ++j)
+    {
+      if (matrix[i][j] == 1)
+        cout << j + 1 << " ";
+    }
+    cout << endl;
   }
-  cout << endl;
-  delete[] arr;
 }
 
 int main()

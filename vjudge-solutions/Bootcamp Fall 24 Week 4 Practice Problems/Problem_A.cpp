@@ -1,31 +1,31 @@
 #include <iostream>
+#include <vector>
 #include <algorithm>
-
 using namespace std;
-
 #define FAST_IO                \
   ios::sync_with_stdio(false); \
   cin.tie(nullptr);
-
 using ll = long long;
+using vi = vector<int>;
+using vll = vector<ll>;
 const ll mod = 1e9 + 7;
 
 void solve()
 {
-  int n;
-  cin >> n;
-  int *arr = new int[n];
-  for (int i = 0; i < n; ++i)
+  int t;
+  cin >> t;
+  vi arr(t);
+  for (int i = 0; i < t; ++i)
   {
     cin >> arr[i];
   }
-  reverse(arr, arr + n);
-  for (int i = 0; i < n; ++i)
-  { 
-    cout << arr[i] << " ";
+  vi temp = arr;
+  reverse(temp.begin(), temp.end());
+  for (int i = 0; i < t; ++i)
+  {
+    cout << temp[i] << " ";
   }
-  cout << endl;
-  delete[] arr;
+  cout << '\n';
 }
 
 int main()
