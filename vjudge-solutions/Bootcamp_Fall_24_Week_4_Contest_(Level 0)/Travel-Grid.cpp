@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-
+#include <string>
 using namespace std;
 #define FAST_IO                \
   ios::sync_with_stdio(false); \
@@ -12,39 +12,33 @@ const ll mod = 1e9 + 7;
 
 void solve()
 {
-  int H, W;
-  cin >> H >> W;
+  int h, w;
+  cin >> h >> w;
+  int Si, Sj;
+  cin >> Si >> Sj;
+  vector<string> str(h);
+  for (int i = 0; i < h; ++i)
+    cin >> str[i];
 
-  int s1, s2;
-  cin >> s1 >> s2;
+  string text;
+  cin >> text;
+  int x = Si - 1, y = Sj - 1;
 
-  vector<string> C(H);
-  for (int i = 0; i < H; ++i)
+  for (char m : text)
   {
-    cin >> C[i];
-  }
-
-  string X;
-  cin >> X;
-  int x = s1 - 1;
-  int y = s2 - 1;
-
-  for (char m : X)
-  {
-    int next_x = x, next_y = y;
-
+    int nxt_x = x, nxt_y = y;
     if (m == 'L')
-      next_y--;
+      nxt_y--;
     else if (m == 'R')
-      next_y++;
+      nxt_y++;
     else if (m == 'U')
-      next_x--;
+      nxt_x--;
     else if (m == 'D')
-      next_x++;
-    if (next_x >= 0 && next_x < H && next_y >= 0 && next_y < W && C[next_x][next_y] == '.')
+      nxt_x++;
+    if (nxt_x >= 0 && nxt_x < h && nxt_y >= 0 && nxt_y < w && str[nxt_x][nxt_y] == '.')
     {
-      x = next_x;
-      y = next_y;
+      x = nxt_x;
+      y = nxt_y;
     }
   }
   cout << x + 1 << " " << y + 1 << endl;
