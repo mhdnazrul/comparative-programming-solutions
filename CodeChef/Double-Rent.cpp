@@ -8,12 +8,14 @@ using vi = vector<int>;
 using vll = vector<ll>;
 const ll mod = 1e9 + 7;
 
-void solve(int a, int b) {
-cout<<a+b<<endl;
+void solve() {
+  int a;
+  cin >> a;
+  cout << 2 * a << endl;
 }
 
 int main() {
 FAST_IO;
-solve(5,6);
+solve();
 return 0;
 }
