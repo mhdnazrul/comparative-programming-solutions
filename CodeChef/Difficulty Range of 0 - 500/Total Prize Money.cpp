@@ -12,12 +12,10 @@ const ll mod = 1e9 + 7;
 
 void solve()
 {
-  int n;
-  cin >> n;
-  if (n % 3 == 0)
-    cout << "YES\n";
-  else
-    cout << "NO\n";
+  int y, x;
+  cin >> y >> x;
+  ll ans = (y * 10) + (90 * x);
+  cout << ans << endl;
 }
 
 int main()
