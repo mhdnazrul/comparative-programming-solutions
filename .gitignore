@@ -1,9 +1,13 @@
 # Executable and object files
 *.exe
 *.o
+*.cph
+*.prob
 
 # Unwanted folders
+cph/
 Others/
+Temp/
 
 # VS Code specific
 .vscode/
