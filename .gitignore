@@ -7,3 +7,10 @@ Others/
 
 # VS Code specific
 .vscode/
+
+#Delete Unwanted files and Folders in Local machine
+# 1.  For Windows User.
+#     del /s /q *.exe
+# 2.  For Linux/Mac User
+#     find . -name "*.exe" -type f -delete 
+
