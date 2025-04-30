@@ -1,0 +1,9 @@
+# Executable and object files
+*.exe
+*.o
+
+# Unwanted folders
+Others/
+
+# VS Code specific
+.vscode/
