@@ -12,23 +12,18 @@ void solve()
 {
   int n;
   cin >> n;
-  vi v(n);
+  vector<pair<int, string>> str_with_len(n);
   for (int i = 0; i < n; ++i)
-    cin >> v[i];
-
-  int m;
-  cin >> m;
-  v.erase(v.begin() + (m - 1));
-
-  int st, ed;
-  cin >> st >> ed;
-  v.erase(v.begin() + (st - 1), v.begin() + (ed - 1));
-  cout << v.size() << endl;
-  for (int i = 0; i < v.size(); ++i)
   {
-    cout << v[i] << (i == v.size() - 1 ? "" : " ");
+    string s;
+    cin >> s;
+    str_with_len[i] = {s.length(), s};
   }
-  cout << endl;
+  sort(str_with_len.begin(), str_with_len.end());
+  string result = "";
+  for (const auto &pair : str_with_len)
+    result += pair.second;
+  cout << result << endl;
 }
 
 int main()

@@ -12,28 +12,38 @@ void solve()
 {
   int n;
   cin >> n;
-  vi v(n);
+  unordered_set<int> values;
+  int cnt_idx = 0;
+
   for (int i = 0; i < n; ++i)
-    cin >> v[i];
-
-  int m;
-  cin >> m;
-  v.erase(v.begin() + (m - 1));
-
-  int st, ed;
-  cin >> st >> ed;
-  v.erase(v.begin() + (st - 1), v.begin() + (ed - 1));
-  cout << v.size() << endl;
-  for (int i = 0; i < v.size(); ++i)
   {
-    cout << v[i] << (i == v.size() - 1 ? "" : " ");
+    int val;
+    cin >> val;
+
+    while (val > 0 && val % 2 == 0)
+    {
+      if (values.count(val))
+      {
+        break;
+      }
+
+      cnt_idx++;
+      values.insert(val);
+
+      val /= 2;
+    }
   }
-  cout << endl;
+  cout << cnt_idx << endl;
 }
 
 int main()
 {
   FAST_IO;
-  solve();
+  int T;
+  cin >> T;
+  while (T--)
+  {
+    solve();
+  }
   return 0;
 }
